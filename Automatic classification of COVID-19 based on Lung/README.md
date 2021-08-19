@@ -1,11 +1,12 @@
-##Lung Ultrasound Classification
+# Lung Ultrasound Classification
+
 
 **Input**: Segmented LUS Videos with the shape of [20x200x200x2].
 
 **Output**: 2 models (CNN and RFC).
 
 
-#####Description:
+##### Description:
 The algorithm classifies a segmented LUS videos output which is received by the [PL_Seg_and_BB.py]() located in our _IPA project_, into multiple classes:
 - `COVID-19 Severity`: [0,1,2,3], where 0 is very healthy and 3 is very sick.
 - `Pleural-Line Regularity`: [0,1], where 0 is irregular, and 1 is regular.
@@ -34,7 +35,7 @@ Please follow the next steps in order to run our algorithm successfully:
 #### Net Architecture
 ![net_arch](./help_png/Architecture.png)
 
-Notes:
+#### Notes:
 1. Dataloader was inefficient, so all of the videos are loaded onto the memory at the beginning. Therefore, the best way to tune
 hyperparameters is to debug and set a breakpoint before the model assembly, subsequently running everything in the console.
 2. Final `RFC` can be easily changed to any other ML classifier.
